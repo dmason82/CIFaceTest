@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8D5CDAF14505AF9001EC43E /* OCGVampAnalyseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */; };
 		A8D84C6A144E98F70094608F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C69144E98F70094608F /* UIKit.framework */; };
 		A8D84C6C144E98F70094608F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C6B144E98F70094608F /* Foundation.framework */; };
 		A8D84C6E144E98F70094608F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C6D144E98F70094608F /* CoreGraphics.framework */; };
@@ -20,6 +21,8 @@
 		A8D84C8A144E98F80094608F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C6B144E98F70094608F /* Foundation.framework */; };
 		A8D84C92144E98F80094608F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8D84C90144E98F80094608F /* InfoPlist.strings */; };
 		A8D84C95144E98F80094608F /* VampTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D84C94144E98F80094608F /* VampTestTests.m */; };
+		A8D84C9F144E990C0094608F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C9E144E990C0094608F /* CoreImage.framework */; };
+		A8D84CA1144E99130094608F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84CA0144E99130094608F /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,25 +36,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8D5CDAD14505AF9001EC43E /* OCGVampAnalyseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OCGVampAnalyseViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OCGVampAnalyseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A8D84C65144E98F70094608F /* VampTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D84C69144E98F70094608F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A8D84C6B144E98F70094608F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A8D84C6D144E98F70094608F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A8D84C71144E98F70094608F /* VampTest-Info.plist */ = {isa = PBXFileReference; path = "VampTest-Info.plist"; sourceTree = "<group>"; };
+		A8D84C71144E98F70094608F /* VampTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VampTest-Info.plist"; sourceTree = "<group>"; };
 		A8D84C73144E98F70094608F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A8D84C75144E98F70094608F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A8D84C77144E98F70094608F /* VampTest-Prefix.pch */ = {isa = PBXFileReference; path = "VampTest-Prefix.pch"; sourceTree = "<group>"; };
-		A8D84C78144E98F70094608F /* OCGAppDelegate.h */ = {isa = PBXFileReference; path = OCGAppDelegate.h; sourceTree = "<group>"; };
-		A8D84C79144E98F70094608F /* OCGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGAppDelegate.m; sourceTree = "<group>"; };
+		A8D84C75144E98F70094608F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A8D84C77144E98F70094608F /* VampTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VampTest-Prefix.pch"; sourceTree = "<group>"; };
+		A8D84C78144E98F70094608F /* OCGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OCGAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A8D84C79144E98F70094608F /* OCGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OCGAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A8D84C7C144E98F70094608F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		A8D84C7E144E98F70094608F /* OCGViewController.h */ = {isa = PBXFileReference; path = OCGViewController.h; sourceTree = "<group>"; };
-		A8D84C7F144E98F70094608F /* OCGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGViewController.m; sourceTree = "<group>"; };
+		A8D84C7E144E98F70094608F /* OCGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OCGViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A8D84C7F144E98F70094608F /* OCGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OCGViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A8D84C86144E98F80094608F /* VampTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VampTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D84C87144E98F80094608F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		A8D84C8F144E98F80094608F /* VampTestTests-Info.plist */ = {isa = PBXFileReference; path = "VampTestTests-Info.plist"; sourceTree = "<group>"; };
+		A8D84C8F144E98F80094608F /* VampTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VampTestTests-Info.plist"; sourceTree = "<group>"; };
 		A8D84C91144E98F80094608F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A8D84C93144E98F80094608F /* VampTestTests.h */ = {isa = PBXFileReference; path = VampTestTests.h; sourceTree = "<group>"; };
-		A8D84C94144E98F80094608F /* VampTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VampTestTests.m; sourceTree = "<group>"; };
+		A8D84C93144E98F80094608F /* VampTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VampTestTests.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A8D84C94144E98F80094608F /* VampTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VampTestTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A8D84C9E144E990C0094608F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		A8D84CA0144E99130094608F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D84CA1144E99130094608F /* MobileCoreServices.framework in Frameworks */,
+				A8D84C9F144E990C0094608F /* CoreImage.framework in Frameworks */,
 				A8D84C6A144E98F70094608F /* UIKit.framework in Frameworks */,
 				A8D84C6C144E98F70094608F /* Foundation.framework in Frameworks */,
 				A8D84C6E144E98F70094608F /* CoreGraphics.framework in Frameworks */,
@@ -100,6 +109,8 @@
 		A8D84C68144E98F70094608F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8D84CA0144E99130094608F /* MobileCoreServices.framework */,
+				A8D84C9E144E990C0094608F /* CoreImage.framework */,
 				A8D84C69144E98F70094608F /* UIKit.framework */,
 				A8D84C6B144E98F70094608F /* Foundation.framework */,
 				A8D84C6D144E98F70094608F /* CoreGraphics.framework */,
@@ -117,6 +128,8 @@
 				A8D84C7E144E98F70094608F /* OCGViewController.h */,
 				A8D84C7F144E98F70094608F /* OCGViewController.m */,
 				A8D84C70144E98F70094608F /* Supporting Files */,
+				A8D5CDAD14505AF9001EC43E /* OCGVampAnalyseViewController.h */,
+				A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */,
 			);
 			path = VampTest;
 			sourceTree = "<group>";
@@ -260,6 +273,7 @@
 				A8D84C76144E98F70094608F /* main.m in Sources */,
 				A8D84C7A144E98F70094608F /* OCGAppDelegate.m in Sources */,
 				A8D84C80144E98F70094608F /* OCGViewController.m in Sources */,
+				A8D5CDAF14505AF9001EC43E /* OCGVampAnalyseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +443,7 @@
 				A8D84C9A144E98F80094608F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8D84C9B144E98F80094608F /* Build configuration list for PBXNativeTarget "VampTestTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +452,7 @@
 				A8D84C9D144E98F80094608F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

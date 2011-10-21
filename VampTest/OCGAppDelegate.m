@@ -3,7 +3,7 @@
 //  VampTest
 //
 //  Created by Doug Mason on 10/18/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Observation Chair Group. All rights reserved.
 //
 
 #import "OCGAppDelegate.h"
@@ -11,7 +11,7 @@
 @implementation OCGAppDelegate
 
 @synthesize window = _window;
-
+@synthesize image;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

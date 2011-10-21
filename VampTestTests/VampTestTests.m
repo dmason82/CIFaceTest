@@ -3,7 +3,7 @@
 //  VampTestTests
 //
 //  Created by Doug Mason on 10/18/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Observation Chair Group. All rights reserved.
 //
 
 #import "VampTestTests.h"
