@@ -85,7 +85,7 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     UIImagePickerController* picker = [[UIImagePickerController alloc] init];
-    [picker setEditing:NO];
+    [picker setEditing:YES];
     [picker setTitle:@"Capture image of potential vampire"];
     [picker setDelegate:self];
         if (buttonIndex == 0)
@@ -136,6 +136,7 @@
     {
         [picker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
     }
+    [self presentModalViewController:picker animated:YES];
     
 }
 #pragma mark - User Interaction
