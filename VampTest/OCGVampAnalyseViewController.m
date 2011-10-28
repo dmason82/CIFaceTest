@@ -8,9 +8,11 @@
 
 #import "OCGVampAnalyseViewController.h"
 #import "OCGAppDelegate.h"
+#import "OCGImageView.h"
 @implementation OCGVampAnalyseViewController
 @synthesize pictureView;
 @synthesize facialFeatures;
+@synthesize overlay;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,16 +54,10 @@
     UIImage* im = [[UIImage alloc] initWithCGImage:cgImage];
     [self.pictureView setImage:im];
     [self.pictureView setHidden:NO];
-    NSDictionary* options = [[NSDictionary alloc] initWithObjectsAndKeys:@"CIDetectorAccuracy",@"CIDetectorAccuracyHigh", nil];
-    CIImage* image = [[CIImage alloc] initWithImage:im];
-    NSLog(@"%@",image);
-    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:options];
-    facialFeatures = [detector featuresInImage:image];
-    NSLog(@"%d",[facialFeatures count]);
-    for (CIFeature* feature in facialFeatures) {
-        NSLog(@"%@",feature.type);
-    }
-    NSLog(@"%@",facialFeatures);
+    NSLog(@"%@",im);
+    [overlay setBackgroundColor:[UIColor clearColor]];
+    //[overlay setOpaque:NO];
+    [overlay setNeedsDisplay];
 }
 - (void)viewDidUnload
 {

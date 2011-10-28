@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreImage/CoreImage.h>
+@class OCGImageView;
 @interface OCGVampAnalyseViewController : UIViewController
 {
     NSArray* facialFeatures;
 }
 @property(nonatomic,retain)IBOutlet UIImageView* pictureView;
 @property(nonatomic,retain)NSArray* facialFeatures;
+@property(nonatomic,retain)IBOutlet OCGImageView* overlay;
 -(IBAction)save:(id)sender;
 -(IBAction)share:(id)sender;
 -(IBAction)again:(id)sender;
