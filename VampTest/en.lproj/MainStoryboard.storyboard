@@ -116,10 +116,16 @@
                                     <action selector="again:" destination="1ei-eB-0Jy" eventType="touchUpInside" id="67f-88-yzE"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="yYE-k7-AZL" customClass="OCGImageView">
+                                <rect key="frame" x="20" y="13" width="280" height="401"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="overlay" destination="yYE-k7-AZL" id="jZM-TW-Y8Y"/>
                         <outlet property="pictureView" destination="tJz-HU-Lgt" id="3zU-dP-Ris"/>
                     </connections>
                 </viewController>
@@ -127,6 +133,31 @@
             <point key="canvasLocation" x="580" y="80"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="OCGImageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGImageView.h"/>
+        </class>
+        <class className="OCGVampAnalyseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGVampAnalyseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="again:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="action" name="share:"/>
+                <relationship kind="outlet" name="overlay" candidateClass="OCGImageView"/>
+                <relationship kind="outlet" name="pictureView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="OCGViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="analyse:"/>
+                <relationship kind="action" name="capture:"/>
+                <relationship kind="outlet" name="analyseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="captureButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pictureView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
