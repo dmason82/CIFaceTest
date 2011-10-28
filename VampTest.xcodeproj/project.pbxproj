@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A840DDB8145AE89F007FFA21 /* OCGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A840DDB7145AE89F007FFA21 /* OCGImageView.m */; };
 		A8D5CDAF14505AF9001EC43E /* OCGVampAnalyseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */; };
 		A8D84C6A144E98F70094608F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C69144E98F70094608F /* UIKit.framework */; };
 		A8D84C6C144E98F70094608F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C6B144E98F70094608F /* Foundation.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A840DDB6145AE89F007FFA21 /* OCGImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCGImageView.h; sourceTree = "<group>"; };
+		A840DDB7145AE89F007FFA21 /* OCGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCGImageView.m; sourceTree = "<group>"; };
 		A8D5CDAD14505AF9001EC43E /* OCGVampAnalyseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OCGVampAnalyseViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OCGVampAnalyseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A8D84C65144E98F70094608F /* VampTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +133,8 @@
 				A8D84C70144E98F70094608F /* Supporting Files */,
 				A8D5CDAD14505AF9001EC43E /* OCGVampAnalyseViewController.h */,
 				A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */,
+				A840DDB6145AE89F007FFA21 /* OCGImageView.h */,
+				A840DDB7145AE89F007FFA21 /* OCGImageView.m */,
 			);
 			path = VampTest;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				A8D84C7A144E98F70094608F /* OCGAppDelegate.m in Sources */,
 				A8D84C80144E98F70094608F /* OCGViewController.m in Sources */,
 				A8D5CDAF14505AF9001EC43E /* OCGVampAnalyseViewController.m in Sources */,
+				A840DDB8145AE89F007FFA21 /* OCGImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
