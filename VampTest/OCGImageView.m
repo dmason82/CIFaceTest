@@ -13,8 +13,12 @@
 -(void)drawRect:(CGRect)rect
 {
     NSDictionary* options = [[NSDictionary alloc] initWithObjectsAndKeys:@"CIDetectorAccuracy",@"CIDetectorAccuracyHigh", nil];
-    UIImage* bg = [(OCGAppDelegate*)[[UIApplication sharedApplication] delegate] image];
-    CIImage* image = [bg CIImage];
+    CGImageRef cgim = [[(OCGAppDelegate*)[[UIApplication sharedApplication] delegate] image] CGImage];
+    UIImage* im = [[UIImage alloc] initWithCGImage:cgim];
+    CIImage* image = [[CIImage alloc] initWithImage:im];
+    if (image == nil) {
+        NSLog(@"Nil image in App Delegate");
+    }
     NSLog(@"%@",image);
     CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:options];
     facialFeatures = [detector featuresInImage:image];

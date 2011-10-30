@@ -68,6 +68,7 @@
 {
     [self.pictureView setImage:image];
     [self.pictureView setHidden:NO];
+    [(OCGAppDelegate*)[[UIApplication sharedApplication] delegate] setImage:image];
     [picker dismissModalViewControllerAnimated:YES];
 }
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -78,7 +79,6 @@
         [((OCGAppDelegate*)[[UIApplication sharedApplication] delegate]) setImage:(UIImage*)[info valueForKey:UIImagePickerControllerOriginalImage]];
         [self.pictureView setHidden:NO];
     }
-    
     [picker dismissModalViewControllerAnimated:YES];
 }
 #pragma mark - UIActionSheetDelegate
