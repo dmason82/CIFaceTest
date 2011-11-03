@@ -57,6 +57,9 @@
     NSLog(@"%@",im);
     [overlay setBackgroundColor:[UIColor clearColor]];
     //[overlay setOpaque:NO];
+    [pictureView setTransform:CGAffineTransformMakeScale(1, -1)];
+    //[self.overlay setTransform:CGAffineTransformMakeScale(1, -1)];
+    [self.view.window setTransform:CGAffineTransformMakeScale(1, -1)];
     [overlay setNeedsDisplay];
 }
 - (void)viewDidUnload
