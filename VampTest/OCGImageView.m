@@ -12,7 +12,8 @@
 @synthesize facialFeatures;
 -(void)drawRect:(CGRect)rect
 {
-    NSDictionary* options = [[NSDictionary alloc] initWithObjectsAndKeys:@"CIDetectorAccuracy",@"CIDetectorAccuracyLow", nil];
+    
+    NSDictionary* options = [[NSDictionary alloc] initWithObjectsAndKeys:@"CIDetectorAccuracy",@"CIDetectorAccuracyHigh", nil];
     CGImageRef cgim = [[(OCGAppDelegate*)[[UIApplication sharedApplication] delegate] image] CGImage];
     UIImage* im = [[UIImage alloc] initWithCGImage:cgim];
     CIImage* image = [[CIImage alloc] initWithImage:im];
@@ -23,7 +24,10 @@
     CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:options];
     facialFeatures = [detector featuresInImage:image];
     NSLog(@"%d",[facialFeatures count]);
-    
+    float ratioh = self.frame.size.height/im.size.height;
+    float ratiow = self.frame.size.width/ im.size.width;
+    NSLog(@"Height ratio: %f",ratioh);
+    NSLog(@"Width ratio: %f",ratiow);
     for (CIFaceFeature* feature in facialFeatures) 
     {
         NSLog(@"%i",[feature hasMouthPosition]);
@@ -36,37 +40,29 @@
         CGFloat components[] = {1.0,0.0,0.0,1.0};
         CGColorRef color = CGColorCreate(colorspace, components);
         CGContextSetStrokeColorWithColor(context, color);
-        //CGContextMoveToPoint(context, feature.leftEyePosition.x, feature.leftEyePosition.y);
-        //CGContextAddLineToPoint(context, feature.rightEyePosition.x, feature.rightEyePosition.y);
-        CGContextMoveToPoint(context, 0, 0);
-        CGContextAddLineToPoint(context,self.frame.size.width, self.frame.size.height);
+        CGContextMoveToPoint(context, (feature.leftEyePosition.x*ratiow)-5.0, feature.leftEyePosition.y*ratioh);
+        CGContextAddLineToPoint(context, feature.rightEyePosition.x*ratiow+5.0, feature.rightEyePosition.y*ratioh);
+        CGContextStrokePath(context);
+        CGColorRelease(color);
+        CGContextSetLineWidth(context, 5.0);
+        CGFloat mComponents[] = {0.1,0.0,0.9,1.0};
+        color = CGColorCreate(colorspace, mComponents);
+        CGContextSetStrokeColorWithColor(context, color);
+        CGContextMoveToPoint(context, feature.mouthPosition.x*ratiow, feature.mouthPosition.y*ratioh);
+        CGContextAddLineToPoint(context, (feature.mouthPosition.x*ratiow)+8, (feature.mouthPosition.y*ratioh)-7);
         CGContextStrokePath(context);
         CGColorSpaceRelease(colorspace);
         CGColorRelease(color);
-        if([feature hasLeftEyePosition])
-        {
-            UIView* lEye = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15.0, 15.0)];
-            [lEye setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2]];
-            [lEye setCenter:feature.leftEyePosition];
-            [self addSubview:lEye];
-        }
-        if([feature hasRightEyePosition])
-        {
-            UIView* rEye = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15.0, 15.0)];
-            [rEye setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2]];
-            [rEye setCenter:feature.rightEyePosition];
-            [self addSubview:rEye];
-        }
-        if([feature hasMouthPosition])
-        {
-            UIView* mouth = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15.0, 15.0)];
-            [mouth setBackgroundColor:[[UIColor greenColor] colorWithAlphaComponent:0.2]];
-            [mouth setCenter:feature.mouthPosition];
-            [self addSubview:mouth];
-        }
     }
     [self setBackgroundColor:[UIColor clearColor]];
     [self setOpaque:YES];
     [self setHidden:NO];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch* t in touches) {
+        NSLog(@"%@",t.description);
+    }
 }
 @end

@@ -9,6 +9,7 @@
 #import "OCGVampAnalyseViewController.h"
 #import "OCGAppDelegate.h"
 #import "OCGImageView.h"
+#import <QuartzCore/QuartzCore.h>
 @implementation OCGVampAnalyseViewController
 @synthesize pictureView;
 @synthesize facialFeatures;
@@ -57,8 +58,7 @@
     NSLog(@"%@",im);
     [overlay setBackgroundColor:[UIColor clearColor]];
     //[overlay setOpaque:NO];
-    [pictureView setTransform:CGAffineTransformMakeScale(1, -1)];
-    //[self.overlay setTransform:CGAffineTransformMakeScale(1, -1)];
+    [self.overlay setTransform:CGAffineTransformMakeScale(1, -1)];
     [self.view.window setTransform:CGAffineTransformMakeScale(1, -1)];
     [overlay setNeedsDisplay];
 }
@@ -76,6 +76,38 @@
 }
 -(IBAction)save:(id)sender
 {
+    CGPoint pt = overlay.bounds.origin;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIGraphicsBeginImageContext(overlay.bounds.size);
+    context = UIGraphicsGetCurrentContext();
+    CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-(int)pt.x, -(int)pt.y));
+    [self.view.window.layer renderInContext:context];
+    UIImage* saveBuf = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSDate* date = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM-dd-YYYY HH-MM"];
+   NSArray* search = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES);
+    NSString* path = [[search lastObject] stringByAppendingFormat:@"/%@.png",[formatter stringFromDate:date]];
+    NSError* error = nil;
+    NSData* data = UIImagePNGRepresentation(saveBuf);
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if( ![manager fileExistsAtPath:path])
+    {
+        NSLog(@"Creating new file at %@",path);
+        [manager createFileAtPath:path contents:data attributes:nil];
+    }
+    else if ([data writeToURL:[NSURL URLWithString:path] options:NSDataWritingAtomic error:&error]) 
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Saved Successfully" message:[NSString stringWithFormat:@"Saved image to path %@ successfully",path] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Save failed!" message:[NSString stringWithFormat:@"Save to path %@ failed with error %@",path,error] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+    }
+    //UIImageWriteToSavedPhotosAlbum(saveBuf, self, @selector(nil), nil);
     
 }
 -(IBAction)share:(id)sender
@@ -86,6 +118,14 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
-
-
+//TODO: Implement method first creating a UIImage from the Overlay view, then composting the two together... Then we can do stuff. 
+-(UIImage*)mergeImage:(UIImage *)image withOverlay:(UIImage *)overlay
+{
+//    CGPoint point = CGPointMake(self.pictureView.frame.origin.x,self.pictureView.frame.origin.y);
+//    CGSize size = CGSizeMake(self.pictureView.frame.size.width, self.pictureView.frame.size.height);
+//    UIGraphicsBeginImageContext(size);
+//    im
+    
+    return nil;
+}
 @end

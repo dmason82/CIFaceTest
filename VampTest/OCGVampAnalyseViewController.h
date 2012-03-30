@@ -19,5 +19,5 @@
 -(IBAction)save:(id)sender;
 -(IBAction)share:(id)sender;
 -(IBAction)again:(id)sender;
-
+-(UIImage*)mergeImage:(UIImage*)image withOverlay:(UIImage*)overlay;
 @end
