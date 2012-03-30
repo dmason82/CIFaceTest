@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AC812D31524073300FF04EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC812D21524073300FF04EF /* QuartzCore.framework */; };
 		A840DDB8145AE89F007FFA21 /* OCGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A840DDB7145AE89F007FFA21 /* OCGImageView.m */; };
 		A8D5CDAF14505AF9001EC43E /* OCGVampAnalyseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D5CDAE14505AF9001EC43E /* OCGVampAnalyseViewController.m */; };
 		A8D84C6A144E98F70094608F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D84C69144E98F70094608F /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AC812D21524073300FF04EF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A840DDB6145AE89F007FFA21 /* OCGImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCGImageView.h; sourceTree = "<group>"; };
 		A840DDB7145AE89F007FFA21 /* OCGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCGImageView.m; sourceTree = "<group>"; };
 		A8D5CDAD14505AF9001EC43E /* OCGVampAnalyseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OCGVampAnalyseViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC812D31524073300FF04EF /* QuartzCore.framework in Frameworks */,
 				A8D84CA1144E99130094608F /* MobileCoreServices.framework in Frameworks */,
 				A8D84C9F144E990C0094608F /* CoreImage.framework in Frameworks */,
 				A8D84C6A144E98F70094608F /* UIKit.framework in Frameworks */,
@@ -112,6 +115,7 @@
 		A8D84C68144E98F70094608F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AC812D21524073300FF04EF /* QuartzCore.framework */,
 				A8D84CA0144E99130094608F /* MobileCoreServices.framework */,
 				A8D84C9E144E990C0094608F /* CoreImage.framework */,
 				A8D84C69144E98F70094608F /* UIKit.framework */,
