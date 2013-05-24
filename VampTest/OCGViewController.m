@@ -3,11 +3,21 @@
 //  VampTest
 //
 //  Created by Doug Mason on 10/18/11.
-//  Copyright (c) 2011 Observation Chair Group. All rights reserved.
+//  Copyright 2011 Doug Mason
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
 //
+//http://www.apache.org/licenses/LICENSE-2.0
+//
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License.
 
 #import "OCGViewController.h"
-#import "OCGVampAnalyseViewController.h"
+#import "OCGAnalyseViewController.h"
 #import "OCGAppDelegate.h"
 @implementation OCGViewController
 @synthesize captureButton,analyseButton;
@@ -86,7 +96,7 @@
 {
     UIImagePickerController* picker = [[UIImagePickerController alloc] init];
     [picker setEditing:YES];
-    [picker setTitle:@"Capture image of potential vampire"];
+    [picker setTitle:@"Capture image to draw overlay on."];
     [picker setDelegate:self];
         if (buttonIndex == 0)
         {
@@ -148,9 +158,7 @@
 }
 -(IBAction)analyse:(id)sender
 {
-    /*OCGVampAnalyseViewController* analyse = [[OCGVampAnalyseViewController alloc] init];
-    [analyse setPictureView:[[UIImageView alloc] initWithImage:self.pictureView.image]];*/
+
     [self performSegueWithIdentifier:@"AnalyseSegue" sender:self];
-    //[self performSegueWithIdentifier:@"AnalyseSegue" sender:self];
 }
 @end
