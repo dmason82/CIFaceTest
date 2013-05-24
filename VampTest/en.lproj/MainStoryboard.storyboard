@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2818" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1900"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="OCGViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -56,13 +55,14 @@
                         <outlet property="pictureView" destination="VGe-aN-H1W" id="hB9-nQ-7xw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="80"/>
         </scene>
+        <!--Analyse View Controller-->
         <scene sceneID="J3I-kF-vT2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kf6-eh-8rO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="1ei-eB-0Jy" customClass="OCGVampAnalyseViewController" sceneMemberID="viewController">
+                <viewController id="1ei-eB-0Jy" customClass="OCGAnalyseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9US-Jp-PZn">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -129,16 +129,14 @@
                         <outlet property="pictureView" destination="tJz-HU-Lgt" id="3zU-dP-Ris"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kf6-eh-8rO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="80"/>
         </scene>
     </scenes>
     <classes>
-        <class className="OCGImageView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGImageView.h"/>
-        </class>
-        <class className="OCGVampAnalyseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGVampAnalyseViewController.h"/>
+        <class className="OCGAnalyseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGAnalyseViewController.h"/>
             <relationships>
                 <relationship kind="action" name="again:"/>
                 <relationship kind="action" name="save:"/>
@@ -146,6 +144,9 @@
                 <relationship kind="outlet" name="overlay" candidateClass="OCGImageView"/>
                 <relationship kind="outlet" name="pictureView" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="OCGImageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGImageView.h"/>
         </class>
         <class className="OCGViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OCGViewController.h"/>
